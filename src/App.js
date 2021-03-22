@@ -93,7 +93,7 @@ export class App extends React.Component {
                 <div className="header pure-g">
                     <div className="pure-u-1-24 pure-md-2-24 pure-u-lg-4-24 pure-u-xl-6-24"></div>
                     <div className="pure-u-22-24 pure-md-18-24 pure-u-lg-16-24 pure-u-xl-12-24 content">
-                        <h1 className="brand">Colopia</h1>
+                        <h1 className="brand">Coloopia</h1>
                         <button className="share-button" onClick={() => {
                             copy(window.location.href);
                             alert(strings.paletteCopied);
