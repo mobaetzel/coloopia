@@ -1,38 +1,173 @@
-.App {
-  text-align: center;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 4px #000;
+  color: #000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header .content {
+  display: flex;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header .content .brand {
+  display: inline-block;
+  margin: 0.5em 0;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header .content .share-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #000;
+  margin-right: 1em;
+  font-size: 1.25em;
+}
+
+.header .content .share-button:hover {
+  opacity: 0.5;
+}
+
+.header-placeholder {
+  height: 92px;
+}
+
+
+.color-tile-container {
+  display: flex;
+  margin: 0.75em 0;
+}
+
+.color-tile,
+.add-color-button  {
+  border-radius: 0.5em;
+  padding: 1em 2em;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  width: 100%;
+}
+
+.color-tile {
+  position: relative;
+  padding-left: 5em;
+  overflow: hidden;
+}
+
+.color-tile .color-name label,
+.color-tile .color-value label {
   display: flex;
   flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+
+
+.color-tile .color-name span,
+.color-tile .color-value span {
+  font-size: 75%;
+  margin-bottom: 0.25em;
+}
+
+.color-tile .color-name input,
+.color-tile .color-value input {
+  border: none;
+  border-bottom: 1px solid #000;
+  background: none;
+  outline: none;
+  margin-right: 1em;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.color-tile .color-value {
+  position: relative;
+  overflow: visible;
+}
+
+.add-color-button .plus-container,
+.color-tile .color {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+}
+
+.color-tile .color {
+  position: absolute;
+  left: 2em;
+  z-index: -1;
+  transition: all 500ms ease-in-out;
+}
+
+.color-tile.filled {
+  padding-left: 5em;
+}
+
+.color-tile.filled .color {
+  width: 200vw;
+  height: 200vw;
+  left: -25vw;
+}
+
+.color-tile .color-hider {
+  content: "";
+  position: absolute;
+  left: 2em;
+  width: 2em;
+  height: 2em;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+  cursor: pointer;
+}
+
+.color-tile.filled .color-hider {
+  transition: opacity 200ms ease-in-out;
+  opacity: 1;
+}
+
+.color-tile-container .color-controls {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  flex: 0;
+  flex-direction: column;
+}
+
+.color-tile-container .color-controls button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+}
+
+.add-color-button {
+  border: 2px dashed #bbb;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  color: #bbb;
+
+  transition: color, background-color 100ms ease-in-out;
+}
+
+.add-color-button:hover {
+  background-color: #eee;
+  color: #888;
+}
+
+.add-color-button .plus-container {
+  background-color: #aaa;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  color: #fff;
 }
