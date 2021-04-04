@@ -7,7 +7,8 @@ steps:
     image: node
     commands:
       - npm install
-      - npx firebase deploy --token "$FIREBASE_TOKEN"
+      - npm install -g firebase
+      - firebase deploy --token "$FIREBASE_TOKEN"
     environment:
       FIREBASE_TOKEN:
         from_secret: FIREBASE_TOKEN
