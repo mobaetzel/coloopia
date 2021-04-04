@@ -2,7 +2,6 @@ import * as React from 'react';
 import { strings } from './strings';
 import { Trash } from './icons/trash';
 import { Clone } from './icons/clone';
-import { ChromePicker } from 'react-color';
 
 export class ColorTile extends React.Component {
     constructor(props) {
