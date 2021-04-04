@@ -1,0 +1,17 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: deploy
+    image: node
+    commands:
+      - npm install
+      - npx firebase deploy --token "$FIREBASE_TOKEN"
+    environment:
+      FIREBASE_TOKEN:
+        from_secret: FIREBASE_TOKEN
+
+trigger:
+  branch:
+    - master
